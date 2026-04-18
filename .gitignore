@@ -3,8 +3,8 @@ node_modules/
 client/node_modules/
 server/node_modules/
 
-# Build output
-client/build/
+# Build output — DO NOT ignore, Vercel needs this
+# client/build/
 
 # Environment variables — NEVER commit these
 server/.env

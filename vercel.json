@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "buildCommand": "cd client && npm install && npm run build",
   "builds": [
     {
       "src": "server/index.js",
@@ -7,6 +8,18 @@
     }
   ],
   "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server/index.js"
+    },
+    {
+      "src": "/admin/(.*)",
+      "dest": "server/index.js"
+    },
+    {
+      "src": "/admin",
+      "dest": "server/index.js"
+    },
     {
       "src": "/(.*)",
       "dest": "server/index.js"

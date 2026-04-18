@@ -1,7 +1,7 @@
 {
   "name": "portfolio-mern",
   "version": "1.0.0",
-  "description": "Alex Mercer Portfolio — MERN Stack",
+  "description": "Moiz Shahid Portfolio — MERN Stack",
   "scripts": {
     "install:server": "cd server && npm install",
     "install:client": "cd client && npm install",
