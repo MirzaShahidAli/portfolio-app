@@ -40,7 +40,8 @@ const contactSchema = new mongoose.Schema({
     default: ''
   }
 }, {
-  timestamps: true
+  timestamps: true,
+  bufferCommands: false  // fail fast if not connected, don't buffer
 });
 
 module.exports = mongoose.model('Contact', contactSchema);
