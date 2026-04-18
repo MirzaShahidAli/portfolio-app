@@ -8,7 +8,6 @@ const css = `
 html,body{height:100%}
 body{background:var(--black);color:var(--white);font-family:var(--font-body);overflow-x:hidden}
 .dash{display:flex;min-height:100vh}
-/* SIDEBAR */
 .sidebar{width:240px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto}
 @media(max-width:768px){.sidebar{display:none}}
 .sidebar-brand{padding:1.5rem 1.4rem;border-bottom:1px solid var(--border)}
@@ -29,7 +28,6 @@ body{background:var(--black);color:var(--white);font-family:var(--font-body);ove
 .sidebar-role{font-size:.7rem;color:var(--muted)}
 .logout-btn{margin-left:auto;background:none;border:none;color:var(--muted);cursor:pointer;font-size:.8rem;padding:.3rem .5rem;border-radius:6px;transition:all .2s}
 .logout-btn:hover{color:var(--red)}
-/* MAIN */
 .main{flex:1;display:flex;flex-direction:column;min-width:0}
 .topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:1rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;position:sticky;top:0;z-index:50}
 .topbar-left{display:flex;align-items:center;gap:1rem;min-width:0}
@@ -46,7 +44,6 @@ body{background:var(--black);color:var(--white);font-family:var(--font-body);ove
 .tb-btn.danger:hover{border-color:var(--red);color:var(--red)}
 .content{padding:1.5rem 1.8rem;flex:1}
 @media(max-width:480px){.content{padding:1rem 1.1rem}}
-/* STAT CARDS */
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.5rem}
 @media(max-width:1100px){.stats-row{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.stats-row{grid-template-columns:1fr 1fr}}
@@ -59,12 +56,10 @@ body{background:var(--black);color:var(--white);font-family:var(--font-body);ove
 .sc-val.green{color:var(--green)}
 .sc-val.yellow{color:var(--yellow)}
 .sc-sub{font-size:.72rem;color:var(--muted);margin-top:.3rem}
-/* FILTER BAR */
 .filter-bar{display:flex;gap:.6rem;margin-bottom:1.2rem;flex-wrap:wrap;align-items:center}
 .filter-btn{background:var(--card);border:1px solid var(--border);color:var(--muted);padding:.45rem .9rem;border-radius:8px;font-size:.78rem;cursor:pointer;transition:all .2s;font-family:var(--font-body)}
 .filter-btn:hover{color:var(--white)}
 .filter-btn.active{background:rgba(200,240,101,.1);border-color:rgba(200,240,101,.4);color:var(--accent)}
-/* TABLE */
 .table-wrap{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden}
 .table-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.3rem;border-bottom:1px solid var(--border);gap:1rem;flex-wrap:wrap}
 .table-count{font-size:.8rem;color:var(--muted)}
@@ -94,7 +89,6 @@ td:last-child{padding-right:1.3rem}
 .empty-state{text-align:center;padding:4rem 2rem;color:var(--muted)}
 .empty-icon{font-size:3rem;margin-bottom:1rem;opacity:.4}
 .empty-text{font-size:.9rem}
-/* PAGINATION */
 .pagination{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.3rem;border-top:1px solid var(--border);gap:1rem;flex-wrap:wrap}
 .page-info{font-size:.78rem;color:var(--muted)}
 .page-btns{display:flex;gap:.4rem}
@@ -102,7 +96,6 @@ td:last-child{padding-right:1.3rem}
 .page-btn:hover:not(:disabled){border-color:var(--border2);color:var(--white)}
 .page-btn:disabled{opacity:.3;cursor:not-allowed}
 .page-btn.active{background:rgba(200,240,101,.1);border-color:rgba(200,240,101,.4);color:var(--accent)}
-/* DRAWER */
 .drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:100;backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .3s}
 .drawer-overlay.open{opacity:1;pointer-events:all}
 .drawer{position:fixed;right:0;top:0;bottom:0;width:min(520px,100vw);background:var(--surface);border-left:1px solid var(--border);z-index:101;transform:translateX(100%);transition:transform .35s cubic-bezier(.23,1,.32,1);display:flex;flex-direction:column;overflow:hidden}
@@ -130,15 +123,15 @@ td:last-child{padding-right:1.3rem}
 .df-btn-primary:hover{background:#d8ff75}
 .df-btn-danger{background:rgba(255,107,74,.12);color:var(--red);border:1px solid rgba(255,107,74,.25)}
 .df-btn-danger:hover{background:rgba(255,107,74,.2)}
-/* MOB SIDEBAR */
+
 .mob-sidebar{position:fixed;inset:0;z-index:150}
 .mob-sidebar-bg{position:absolute;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(4px)}
 .mob-sidebar-panel{position:absolute;left:0;top:0;bottom:0;width:260px;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto}
-/* LOADING */
+
 .loading{display:flex;align-items:center;justify-content:center;padding:4rem;color:var(--muted);font-size:.9rem;gap:.6rem}
 .spinner{width:18px;height:18px;border:2px solid var(--border2);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
 @keyframes spin{to{transform:rotate(360deg)}}
-/* RESPONSIVE TABLE */
+
 @media(max-width:640px){
   .col-subject,.col-status{display:none}
   .td-subject,.td-status{display:none}
@@ -227,7 +220,6 @@ export default function Dashboard() {
     fetchContacts();
   }, [fetchContacts]);
 
-  // debounced search
   useEffect(() => {
     const t = setTimeout(() => {
       setPage(1);
@@ -383,12 +375,9 @@ export default function Dashboard() {
     <>
       <style>{css}</style>
       <div className="dash">
-        {/* Desktop Sidebar */}
         <aside className="sidebar">
           <SidebarContent />
         </aside>
-
-        {/* Mobile Sidebar */}
         {mobSidebar && (
           <div className="mob-sidebar">
             <div
@@ -402,7 +391,6 @@ export default function Dashboard() {
         )}
 
         <div className="main">
-          {/* Topbar */}
           <div className="topbar">
             <div className="topbar-left">
               <button
@@ -435,7 +423,6 @@ export default function Dashboard() {
           </div>
 
           <div className="content">
-            {/* Stats */}
             <div className="stats-row">
               <div className="stat-card">
                 <div className="sc-label">
@@ -468,8 +455,6 @@ export default function Dashboard() {
                 <div className="sc-sub">Hidden</div>
               </div>
             </div>
-
-            {/* Filters */}
             <div className="filter-bar">
               {["all", "new", "read", "replied", "archived"].map((s) => (
                 <button
@@ -487,8 +472,6 @@ export default function Dashboard() {
                 </button>
               ))}
             </div>
-
-            {/* Table */}
             <div className="table-wrap">
               <div className="table-header">
                 <span className="table-count">
@@ -643,8 +626,6 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-
-        {/* CONTACT DRAWER */}
         <div
           className={`drawer-overlay${activeContact ? " open" : ""}`}
           onClick={() => setActiveContact(null)}

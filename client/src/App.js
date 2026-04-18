@@ -12,7 +12,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Admin routes only — portfolio is served as plain HTML by Express */}
         <Route path="/admin/login" element={<Login />} />
         <Route
           path="/admin"

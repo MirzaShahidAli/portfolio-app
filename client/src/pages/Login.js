@@ -39,7 +39,6 @@ export default function Login() {
     const style = document.createElement("style");
     style.textContent = css;
     document.head.appendChild(style);
-    // If already logged in, redirect
     const token = localStorage.getItem("admin_token");
     if (token) navigate("/admin");
     return () => document.head.removeChild(style);
