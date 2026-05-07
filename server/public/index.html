@@ -110,7 +110,6 @@
         }
       }
 
-      /* NAV */
       nav {
         position: fixed;
         top: 0;
@@ -204,7 +203,6 @@
         padding-bottom: 1rem !important;
       }
 
-      /* MOBILE MENU */
       .mobile-menu {
         position: fixed;
 
@@ -254,7 +252,6 @@
         z-index: 9999;
       }
 
-      /* HERO */
       #hero {
         min-height: 100svh;
         display: flex;
@@ -517,7 +514,6 @@
         margin-top: 0.1rem;
       }
 
-      /* MARQUEE */
       .marquee-section {
         padding: 1.6rem 0;
         border-top: 1px solid var(--border);
@@ -552,7 +548,6 @@
         }
       }
 
-      /* ABOUT */
       #about {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -702,7 +697,6 @@
         margin-top: 0.15rem;
       }
 
-      /* PROJECTS */
       #projects {
         background: var(--off-black);
         padding: var(--spy) var(--px);
@@ -861,7 +855,6 @@
         color: var(--muted);
       }
 
-      /* TESTIMONIALS */
       #testimonials {
         padding: var(--spy) var(--px);
         overflow: hidden;
@@ -959,7 +952,6 @@
         margin-top: 0.1rem;
       }
 
-      /* CONTACT */
       #contact {
         background: var(--off-black);
         padding: var(--spy) var(--px);
@@ -1115,7 +1107,6 @@
         color: var(--accent3);
       }
 
-      /* FOOTER */
       footer {
         border-top: 1px solid var(--border);
         padding: 2.5rem var(--px);
@@ -1160,7 +1151,6 @@
         color: var(--accent);
       }
 
-      /* MODAL */
       .modal-overlay {
         position: fixed;
         inset: 0;
@@ -1358,7 +1348,6 @@
         border-color: var(--white);
       }
 
-      /* ADMIN LINK */
       .admin-link {
         position: fixed;
         bottom: 2rem;
@@ -1380,7 +1369,6 @@
         border-color: var(--accent);
       }
 
-      /* REVEAL DEFAULTS */
       .reveal {
         opacity: 0;
         transform: translateY(40px);
@@ -1422,7 +1410,6 @@
       <a href="#contact" class="mm-link mm-hire">Hire Me</a>
     </div>
 
-    <!-- HERO -->
     <section id="hero">
       <div class="hero-bg-grid"></div>
       <div class="hero-orb hero-orb1"></div>
@@ -1485,8 +1472,6 @@
         Scroll to explore
       </div>
     </section>
-
-    <!-- MARQUEE -->
     <div class="marquee-section">
       <div class="marquee-track">
         <div class="marquee-item">
@@ -1513,7 +1498,6 @@
       </div>
     </div>
 
-    <!-- ABOUT -->
     <section id="about">
       <div class="about-left">
         <p class="eyebrow">About me</p>
@@ -1525,7 +1509,7 @@
           Hi, I’m Moiz, a full-stack developer based in Lahore, Pakistan, with a
           strong passion for building modern web applications. I focus on
           creating web experiences that are not only technically solid and
-          efficient, but also clean, visually engaging, and user-friendly.
+          efficient, but also clean, visually en``aging, and user-friendly.
         </p>
 
         <div class="skills-grid reveal">
@@ -1630,7 +1614,6 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
     <section id="testimonials">
       <div class="section-header">
         <div>
@@ -1701,7 +1684,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
       <div class="contact-wrap">
         <p class="eyebrow" style="justify-content: center; margin-bottom: 1rem">
@@ -1763,7 +1745,6 @@
 
     <a href="/admin/login" class="admin-link">⚙ Admin</a>
 
-    <!-- PROJECT MODAL -->
     <div class="modal-overlay" id="modalOverlay">
       <div class="modal" id="modal">
         <div class="modal-hero" id="modalHero"></div>
@@ -1837,7 +1818,6 @@
 
       gsap.registerPlugin(ScrollTrigger);
 
-      /* ── CUSTOM CURSOR ── */
       const isFine = window.matchMedia("(pointer:fine)").matches;
       if (isFine) {
         const cur = document.getElementById("cursor");
@@ -1887,7 +1867,6 @@
           });
       }
 
-      /* ── HERO ENTRANCE ── */
       gsap.set(".line-inner", { y: "110%" });
       gsap.set(
         [
@@ -1943,7 +1922,6 @@
           "-=0.45",
         );
 
-      /* ── ORB FLOAT ── */
       gsap.to(".hero-orb1", {
         y: -70,
         x: 35,
@@ -1977,14 +1955,12 @@
         delay: 1.5,
       });
 
-      /* ── NAV SCROLL ── */
       window.addEventListener("scroll", () => {
         document
           .getElementById("navbar")
           .classList.toggle("nav-scrolled", window.scrollY > 60);
       });
 
-      /* ── SCROLL REVEALS ── */
       gsap.utils.toArray(".reveal").forEach((el) => {
         gsap.to(el, {
           opacity: 1,
@@ -2032,7 +2008,6 @@
         });
       });
 
-      /* ── ABOUT PARALLAX ── */
       if (window.innerWidth > 768) {
         ScrollTrigger.create({
           trigger: "#about",
@@ -2047,7 +2022,6 @@
         });
       }
 
-      /* ── MOBILE MENU ── */
       const menu = document.getElementById("mobileMenu");
       document.getElementById("hamburger").addEventListener("click", () => {
         menu.classList.add("open");
@@ -2064,7 +2038,6 @@
         document.getElementById("hamburger").style.display = "flex";
       }
 
-      /* ── TESTIMONIAL SLIDER ── */
       let tIdx = 0;
       const tTrack = document.getElementById("tTrack");
       function getCardW() {
@@ -2106,7 +2079,6 @@
         { passive: true },
       );
 
-      /* ── PROJECT MODAL ── */
       const overlay = document.getElementById("modalOverlay");
       const modalHero = document.getElementById("modalHero");
       const modalBody = document.getElementById("modalBody");
@@ -2172,7 +2144,6 @@
         if (e.key === "Escape") closeModal();
       });
 
-      /* ── CONTACT FORM ── */
       document
         .getElementById("cfSubmit")
         .addEventListener("click", async () => {
